@@ -7,6 +7,24 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:id="@+id/et_search"
+                android:textColor="@android:color/white"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -14,7 +32,7 @@
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ProgressBar
