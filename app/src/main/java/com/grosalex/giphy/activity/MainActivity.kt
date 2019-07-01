@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), RandomGifContract.View, SearchGifContr
 
     private fun startSearch(): Boolean {
         ivGif.visibility = View.GONE
-        toolbar.title = "Search :"
+        toolbar.title = getString(R.string.search_title)
         etSearch.visibility = View.VISIBLE
         etSearch.requestFocus()
         return true
