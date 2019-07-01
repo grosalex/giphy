@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.grosalex.giphy.Navigator
 import com.grosalex.giphy.R
 import com.grosalex.giphy.model.Gif
 import com.grosalex.giphy.utils.bindIntoImageView
@@ -17,9 +18,12 @@ class SearchViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
         .from(parent.context)
         .inflate(R.layout.search_item, parent, false)
 ) {
-    private val ivGif:ImageView = itemView.findViewById(R.id.iv_gif)
+    private val ivGif: ImageView = itemView.findViewById(R.id.iv_gif)
 
     fun bind(gif: Gif) {
         gif.bindIntoImageView(ivGif)
+        itemView.setOnClickListener {
+            Navigator.openDetail(itemView.context, gif)
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.grosalex.giphy
+package com.grosalex.giphy.activity
 
 import android.os.Bundle
 import android.text.Editable
@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.grosalex.giphy.R
 import com.grosalex.giphy.adapter.SearchAdapter
 import com.grosalex.giphy.contract.RandomGifContract
 import com.grosalex.giphy.contract.SearchGifContract
