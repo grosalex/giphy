@@ -113,6 +113,9 @@ class MainActivity : AppCompatActivity(), RandomGifContract.View, SearchGifContr
             toolbar.title = getString(R.string.app_name)
             ivGif.visibility = View.VISIBLE
             isInSearchMode = false
+            adapter.gifs.clear()
+            adapter.notifyDataSetChanged()
+            rvSearch.visibility = View.GONE
             return
         }
 
