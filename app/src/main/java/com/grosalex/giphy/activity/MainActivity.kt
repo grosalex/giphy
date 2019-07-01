@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity(), RandomGifContract.View, SearchGifContr
     private lateinit var presenter: RandomGifPresenter
     private lateinit var searchPresenter: SearchPresenter
 
+    private var isInSearchMode: Boolean = false
+
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
         }
@@ -96,11 +98,25 @@ class MainActivity : AppCompatActivity(), RandomGifContract.View, SearchGifContr
     }
 
     private fun startSearch(): Boolean {
+        isInSearchMode = true
         ivGif.visibility = View.GONE
         toolbar.title = getString(R.string.search_title)
         etSearch.visibility = View.VISIBLE
         etSearch.requestFocus()
         return true
+    }
+
+    override fun onBackPressed() {
+
+        if(isInSearchMode){
+            etSearch.visibility = View.GONE
+            toolbar.title = getString(R.string.app_name)
+            ivGif.visibility = View.VISIBLE
+            isInSearchMode = false
+            return
+        }
+
+        super.onBackPressed()
     }
 
     override fun bind(gif: Gif) {
